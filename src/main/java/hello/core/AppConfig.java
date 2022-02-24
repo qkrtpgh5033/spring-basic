@@ -9,11 +9,12 @@ import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 //앱 전체를 설정하고 구성
-//@Configuration
+@Configuration
 public class AppConfig {
 
     @Bean
@@ -40,8 +41,8 @@ public class AppConfig {
     @Bean
     public DiscountPolicy discountPolicy() {
         System.out.println("AppConfig.discountPolicy");
-        return new FixDiscountPolicy();
-//        return new RateDiscountPolicy();
+//        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
 
